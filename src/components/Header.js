@@ -1,10 +1,13 @@
 import React from 'react'
+import {CiShoppingCart} from 'react-icons/ci'
+import { Link } from 'react-router-dom'
 
-function Header() {
+function Header({setIsOpen}) {
     return (
         <>
-            <header className='sticky top-0 z-30 w-full border border-1 border-slate-700 text-slate-700 bg-slate-100 text-2xl mb-10 px-5'>
-                <h1>FXSHION!</h1>
+            <header className='flex items-center justify-between sticky top-0 z-30 w-full border border-1 border-slate-700 text-slate-700 bg-slate-100 text-2xl px-10'>
+                <h1 className='font-bold'><Link to='/'>FXSHION!</Link></h1>
+                <button className='flex items-center' onClick={()=>setIsOpen(true)}><CiShoppingCart className='text-4xl'/></button>
             </header>
         </>
     )

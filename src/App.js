@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
         <ScrollToTop/>
-        <Header/>
+        <Header setIsOpen={setIsOpen}/>
       <Routes>
         <Route path='/' element={<FetchProducts isOpen={isOpen} setIsOpen={setIsOpen}/>}/>
         <Route path='/:name' element={<SingleProduct isOpen={isOpen} setIsOpen={setIsOpen}/>}/>

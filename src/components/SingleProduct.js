@@ -3,9 +3,11 @@ import data from '../db.json'
 import {Link, useParams} from 'react-router-dom'
 import Cart from './Cart'
 
-function SingleProduct({isOpen, setIsOpen}) {
+function SingleProduct({isOpen, setIsOpen, handleClick}) {
     const [singleProduct, setSingleProduct] = useState([])
     const {name} = useParams()
+    const {item} = useParams()
+
 
     useEffect(()=> {
         const findProduct =()=>{
@@ -23,7 +25,7 @@ function SingleProduct({isOpen, setIsOpen}) {
 
         <ul className='flex items-center mt-10'>
             <li><Link to="/" className='text-slate-200 hover:text-white'>&larr; Back</Link></li>
-            <li className='ml-5'><button className='bg-white text-slate-800 py-2 px-4 hover:bg-slate-800 hover:text-white' onClick={()=>setIsOpen(true) }>Add To Cart</button></li>
+            <li className='ml-5'><button className='bg-white text-slate-800 py-2 px-4 hover:bg-slate-800 hover:text-white' onClick={() => handleClick(item)}>Add To Cart</button></li>
         </ul>
     </section>
     {isOpen  && <Cart setIsOpen={setIsOpen}/>}
