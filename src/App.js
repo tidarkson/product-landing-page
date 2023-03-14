@@ -4,6 +4,7 @@ import Error from "./components/Error";
 import SingleProduct from './components/SingleProduct';
 import ScrollToTop from './components/ScrollToTop';
 import {useState} from 'react'
+import Header from './components/Header';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <BrowserRouter>
         <ScrollToTop/>
+        <Header/>
       <Routes>
         <Route path='/' element={<FetchProducts isOpen={isOpen} setIsOpen={setIsOpen}/>}/>
         <Route path='/:name' element={<SingleProduct isOpen={isOpen} setIsOpen={setIsOpen}/>}/>
